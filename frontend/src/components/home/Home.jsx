@@ -13,7 +13,7 @@ const Home = () => {
   };
 
   return (
-	<div>
+	<div className="w-max">
 	  {/* Carousel Container */}
 	  <Carousel activeIndex={index} onSelect={handleSelect}>
 	    <Carousel.Item>
