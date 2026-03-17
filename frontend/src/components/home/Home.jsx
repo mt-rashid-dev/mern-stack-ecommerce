@@ -53,6 +53,7 @@ const Home = () => {
 		  </Carousel.Caption>
 		</Carousel.Item>
 	  </Carousel>
+	  <p>Lorem ipsum dolor sit amet</p>
 	</div>
   );
 };
