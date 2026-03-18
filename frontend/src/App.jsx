@@ -38,7 +38,6 @@ const App = () => {
 		  <Route path="/sign-out" element={<Layout><div>Sign-Out</div></Layout>}/>
 		</Routes>
 	  </BrowserRouter>
-	  <p>Lorem ipsum dolor sit amet</p>
 	</div>
   );
 };
