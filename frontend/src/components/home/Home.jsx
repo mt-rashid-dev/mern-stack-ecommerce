@@ -1,6 +1,7 @@
 import "./Home.css";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import axios from "axios";
 import Carousel from "react-bootstrap/Carousel";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -10,11 +11,13 @@ import Button from "react-bootstrap/Button";
 import carouselImg1 from "../../assets/carousel-img-1.jpg";
 import carouselImg2 from "../../assets/carousel-img-2.jpg";
 import carouselImg3 from "../../assets/carousel-img-3.jpg";
+import SingleProduct from "../utility/singleProduct/SingleProduct.jsx";
 
 const Home = () => {
 	const theme = useSelector((state) => state.themeReducer.theme);
   const [index, setIndex] = useState(0);
-	const [categoryButton, setCategoryButton] = useState("dark")
+	const [categoryButton, setCategoryButton] = useState("dark");
+	const [products, setProducts] = useState([]);
 	
 	const toggleStyle = () => {
 		// wcu = why choose us
@@ -45,8 +48,15 @@ const Home = () => {
 		}
 	};
 	
+	const fetchProducts = () => {
+		axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/products?page=1&limit=12`)
+		.then(res => setProducts(res.data.products))
+		.catch(error => console.log(error));
+	};
+	
 	useEffect(() => {
 		toggleStyle();
+		fetchProducts();
 	  // eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [theme]);
 
@@ -178,6 +188,22 @@ const Home = () => {
 							</Button>
 						</div>
 					</Col>
+				</Row>
+			</Container>
+			
+			{/* Products Section */}
+			<Container fluid>
+				<div
+				  className="d-flex justify-content-between align-items-center border-bottom border-1 border-dark mt-5 mb-2 pb-2"
+					id="cBorder"
+				>
+					<h3 className="m-0">Products</h3>
+					<Button variant={"success"}>View All</Button>
+				</div>
+				<Row xs={1} sm={2} md={3} lg={4} xxl={6} className="g-3">
+					{products.map(product => <Col>
+						<SingleProduct product={product}/>
+					</Col>)}
 				</Row>
 			</Container>
 		</div>
