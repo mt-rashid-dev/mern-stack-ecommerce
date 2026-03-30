@@ -157,7 +157,7 @@ const Home = () => {
 					<h3 className="m-0">Categories</h3>
 					<Button variant={"success"}>View All</Button>
 				</div>
-				<Row md={3}>
+				<Row xs={1} sm={3} className="g-3">
 					<Col>
 						<div>
 							<Button
