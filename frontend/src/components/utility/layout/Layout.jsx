@@ -1,3 +1,4 @@
+import Footer from "../footer/Footer.jsx";
 import Header from "../header/Header.jsx";
 
 const Layout = ({ children }) => {
@@ -5,6 +6,7 @@ const Layout = ({ children }) => {
 	<div>
 	  <Header/>
 	  {children}
+		<Footer/>
 	</div>
   );
 };
