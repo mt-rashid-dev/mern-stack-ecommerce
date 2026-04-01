@@ -11,7 +11,7 @@ import Button from "react-bootstrap/Button";
 import carouselImg1 from "../../assets/carousel-img-1.jpg";
 import carouselImg2 from "../../assets/carousel-img-2.jpg";
 import carouselImg3 from "../../assets/carousel-img-3.jpg";
-import SingleProduct from "../utility/singleProduct/SingleProduct.jsx";
+import SingleProduct from "../utility/singleProduct/SingleProduct";
 
 const Home = () => {
 	const theme = useSelector((state) => state.themeReducer.theme);

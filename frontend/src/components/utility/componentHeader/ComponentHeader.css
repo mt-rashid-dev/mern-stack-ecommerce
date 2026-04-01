@@ -1,0 +1,15 @@
+.ComponentHeader {
+  width: 100%;
+  height: 200px;
+  background-image: url("../../../assets/bg-img-1.jpg");
+}
+
+.ComponentHeader > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+}
