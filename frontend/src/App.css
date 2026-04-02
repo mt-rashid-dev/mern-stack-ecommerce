@@ -7,3 +7,8 @@
 .w-160 {
 	width: 160px;
 }
+
+.button-disabled {
+  cursor: not-allowed !important;
+  pointer-events: auto !important;
+}

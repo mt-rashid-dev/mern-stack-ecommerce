@@ -1,17 +1,27 @@
 import "./SingleProduct.css";
 import defaultImage from "../../../assets/image-2935360_1280.png";
 import { useEffect, useState } from "react";
-// import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
-// import { addToCart } from "../../features/cartSlice";
+import { addToCart } from "../../../features/cart/cartSlice";
 
 const SingleProduct = ({ product }) => {
+	const isAddedToCart = useSelector((state) => {
+		const index = state.cartReducer.cart.findIndex((item) => item._id === product._id);
+		if (index !== -1) {
+			return true;
+		}
+		return false;
+	});
+	const cart = useSelector((state) => {
+		return state.cartReducer.cart;
+	});
   const [discountPrice, setDiscountPrice] = useState(0);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 	
 	const calculateDiscountPrice = () => {
@@ -23,7 +33,6 @@ const SingleProduct = ({ product }) => {
     if (product.discount > 0) {
       calculateDiscountPrice();
     }
-  	// eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 	
 	const renderTooltip = (props) => (
@@ -60,12 +69,20 @@ const SingleProduct = ({ product }) => {
 				</span> : <span>${product.price}</span>}
 			</h6>
       <h6 className="mb-2">In-stock: {product.inStock}</h6>
-      <Button
+      {!isAddedToCart && <Button
 				className="d-block w-160 m-auto mb-1"
 				variant="primary"
+				onClick={() => dispatch(addToCart(product))}
 			>
 				Add to Cart
-			</Button>
+			</Button>}
+      {isAddedToCart && <Button
+				className="button-disabled d-block w-160 m-auto mb-1"
+				variant="secondary"
+				disabled
+			>
+				Added to Cart
+			</Button>}
 			<Button
 				className="d-block w-160 m-auto"
 				variant="success"

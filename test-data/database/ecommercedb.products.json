@@ -24,7 +24,7 @@
 		"title": "Wristwatch Classic",
 		"description": "Lorem ipsum dolor sit amet",
 		"category": "Wristwatch",
-		"discount": 0,
+		"discount": 5,
 		"currency": "USD",
 		"price": 119,
 		"inStock": 20

@@ -4,7 +4,7 @@ const initialState = {
   theme: "light"
 };
 
-export const counterSlice = createSlice({
+export const themeSlice = createSlice({
   name: "theme",
   initialState,
   reducers: {
@@ -17,6 +17,6 @@ export const counterSlice = createSlice({
   }
 });
 
-export const { enableDarkTheme, enableLightTheme } = counterSlice.actions;
+export const { enableDarkTheme, enableLightTheme } = themeSlice.actions;
 
-export default counterSlice.reducer;
+export default themeSlice.reducer;
