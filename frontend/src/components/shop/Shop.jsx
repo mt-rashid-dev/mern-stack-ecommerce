@@ -19,6 +19,7 @@ const Shop = () => {
   const [limit, setLimit] = useState(12);
   const [category, setCategory] = useState("All");
   const [loading, setLoading] = useState(true);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     // const urlParams = new URLSearchParams(window.location.search);
@@ -29,18 +30,44 @@ const Shop = () => {
   }, [theme]);
 
   const changeCategory = (value) => {
-    history.pushState(null, "", `?category=${value}`);
+    if (category !== "All") {
+      history.pushState(null, "", `?category=${value}`);
+    }
     setCategory(value);
+    fetchProducts(currentPage, limit, value);
+  };
+
+  const changeLimit = (value) => {
+    setLimit(value);
+    fetchProducts(currentPage, value, category);
   };
 
   const fetchProducts = (page, limit, search) => {
     axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/products?page=${page}&limit=${limit}&search=${search}`)
     .then(res => {
-      setProducts(res.data.products);
-      setTotalPages(res.data.totalPages);
+      if (res.data.success === true) {
+        setProducts(res.data.products);
+        setTotalPages(res.data.totalPages);
+      } else {
+        setMessage(res.data.message);
+      }
       setLoading(false);
     })
     .catch(error => console.log(error));
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+      fetchProducts(currentPage - 1, limit, category);
+    }
+  };
+
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+      fetchProducts(currentPage + 1, limit, category);
+    }
   };
 
   const toggleStyle = () => {
@@ -134,13 +161,33 @@ const Shop = () => {
               Wireless Speaker
             </Dropdown.Item>
           </DropdownButton>
-          <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+          <DropdownButton
+            id="dropdown-basic-button"
+            title={`Show ${limit} Items`}
+            variant="success"
+            align="end"
+          >
+            <Dropdown.Item
+              href={null}
+              onClick={() => changeLimit(12)}
+            >
+              12
+            </Dropdown.Item>
+            <Dropdown.Item
+              href={null}
+              onClick={() => changeLimit(24)}
+            >
+              24
+            </Dropdown.Item>
+            <Dropdown.Item
+              href={null}
+              onClick={() => changeLimit(36)}
+            >
+              36
+            </Dropdown.Item>
           </DropdownButton>
 				</div>
-        <Row xs={1} sm={2} md={3} lg={4} xl={6} className="g-3">
+        <Row xs={1} sm={2} md={3} lg={4} xxl={6} className="g-3">
           {products.map(product => <Col>
             <SingleProduct product={product}/>
           </Col>)}
@@ -149,6 +196,7 @@ const Shop = () => {
           <Button
             variant="outline-dark"
             className="Shop-pages"
+            onClick={() => prevPage()}
           >
             &lt;
           </Button>&nbsp;&nbsp;
@@ -158,6 +206,7 @@ const Shop = () => {
           <Button
             variant="outline-dark"
             className="Shop-pages"
+            onClick={() => nextPage()}
           >
             &gt;
           </Button>&nbsp;&nbsp;

@@ -61,13 +61,13 @@ const SingleProduct = ({ product }) => {
 			</h6>
       <h6 className="mb-2">In-stock: {product.inStock}</h6>
       <Button
-				className="d-block w-175 m-auto mb-1"
+				className="d-block w-160 m-auto mb-1"
 				variant="primary"
 			>
 				Add to Cart
 			</Button>
 			<Button
-				className="d-block w-175 m-auto"
+				className="d-block w-160 m-auto"
 				variant="success"
 				onClick={() => navigate(`/product-details?productId=${product._id}`)}
 			>

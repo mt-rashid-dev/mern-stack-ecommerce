@@ -9,7 +9,7 @@ const getProducts = async (req, res, next) => {
 	  let filter = {};
 	  let count = 0;
 		
-	  if (search) {
+	  if (search && search !== "All") {
 	    searchRegexp = new RegExp(`.*${search}.*`, "i");
 	    filter = {
 	      $or: [
