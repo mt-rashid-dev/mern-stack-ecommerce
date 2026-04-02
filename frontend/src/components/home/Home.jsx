@@ -18,6 +18,11 @@ const Home = () => {
   const [index, setIndex] = useState(0);
 	const [categoryButton, setCategoryButton] = useState("dark");
 	const [products, setProducts] = useState([]);
+
+	useEffect(() => {
+		toggleStyle();
+		fetchProducts();
+	}, [theme]);
 	
 	const toggleStyle = () => {
 		// wcu = why choose us
@@ -53,12 +58,6 @@ const Home = () => {
 		.then(res => setProducts(res.data.products))
 		.catch(error => console.log(error));
 	};
-	
-	useEffect(() => {
-		toggleStyle();
-		fetchProducts();
-	  // eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [theme]);
 
   const handleSelect = (selectedIndex) => {
 		setIndex(selectedIndex);
@@ -150,6 +149,7 @@ const Home = () => {
 			
 			{/* Categories Section */}
 			<Container fluid>
+				{/* cBorder = category border */}
 				<div
 				  className="d-flex justify-content-between align-items-center border-bottom border-1 border-dark mt-5 mb-2 pb-2"
 					id="cBorder"

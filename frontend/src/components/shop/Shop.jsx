@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useSelector } from "react-redux";
 import Container from "react-bootstrap/Container";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -11,16 +12,21 @@ import ComponentHeader from "../utility/componentHeader/ComponentHeader";
 import SingleProduct from "../utility/singleProduct/SingleProduct";
 
 const Shop = () => {
+  const theme = useSelector((state) => state.themeReducer.theme);
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [limit, setLimit] = useState(12);
   const [category, setCategory] = useState("All");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // const urlParams = new URLSearchParams(window.location.search);
-    fetchProducts(1, 12, "");
-  }, []);
+    if (loading) {
+      fetchProducts(1, 12, "");
+    }
+    toggleStyle();
+  }, [theme]);
 
   const changeCategory = (value) => {
     history.pushState(null, "", `?category=${value}`);
@@ -32,9 +38,41 @@ const Shop = () => {
     .then(res => {
       setProducts(res.data.products);
       setTotalPages(res.data.totalPages);
+      setLoading(false);
     })
     .catch(error => console.log(error));
   };
+
+  const toggleStyle = () => {
+    // pdHeader = products header
+    const pdHeader = document.getElementById("pdHeader");
+    // page navigation 
+    const pages = document.getElementsByClassName("Shop-pages");
+
+    // Change style for dark theme
+
+    if (theme === "dark") {
+      pdHeader.classList.remove("border-dark");
+      pdHeader.classList.add("border-light");
+      for (let i = 0; i < pages.length; i++) {
+        pages[i].classList.remove("border-dark");
+        pages[i].classList.add("border-light");
+        pages[i].classList.remove("text-dark");
+        pages[i].classList.add("text-light");
+      }
+    }
+
+    if (theme === "light") {
+      pdHeader.classList.remove("border-light");
+      pdHeader.classList.add("border-dark");
+      for (let i = 0; i < pages.length; i++) {
+        pages[i].classList.remove("border-light");
+        pages[i].classList.add("border-dark");
+        pages[i].classList.remove("text-light");
+        pages[i].classList.add("text-dark");
+      }
+    }
+  }
 
   return (
     <div className="w-max">
@@ -43,9 +81,10 @@ const Shop = () => {
 
       {/* Products Section */}
       <Container fluid>
+        {/* pdHeader = products header */}
         <div
 				  className="d-flex justify-content-between align-items-center border-bottom border-1 border-dark my-3 pb-2"
-					id="cBorder"
+					id="pdHeader"
 				>
           <DropdownButton
             id="dropdown-basic-button"
@@ -109,6 +148,7 @@ const Shop = () => {
         <div className="text-center my-3">
           <Button
             variant="outline-dark"
+            className="Shop-pages"
           >
             &lt;
           </Button>&nbsp;&nbsp;
@@ -117,6 +157,7 @@ const Shop = () => {
           </span>&nbsp;&nbsp;
           <Button
             variant="outline-dark"
+            className="Shop-pages"
           >
             &gt;
           </Button>&nbsp;&nbsp;
