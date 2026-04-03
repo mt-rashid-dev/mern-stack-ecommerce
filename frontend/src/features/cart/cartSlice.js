@@ -15,13 +15,19 @@ export const cartSlice = createSlice({
       console.log(newItem);
       state.cart.push(newItem);
       state.total += discountedPrice;
-      console.log(state.cart);
     },
-    increment: (state) => {
-      // write code here
+    increment: (state, action) => {
+      const product = state.cart.find((item) => item._id === action.payload);
+      product.quantity += 1;
+      state.total += product.discountedPrice;
     },
-    decrement: (state) => {
-      // write code here
+    decrement: (state, action) => {
+      const product = state.cart.find((item) => item._id === action.payload);
+      product.quantity -= 1;
+      state.total -= product.discountedPrice;
+      if (product.quantity === 0) {
+        state.cart = state.cart.filter((item) => item._id !== action.payload);
+      }
     },
     clearCart: (state) => {
       // write code here

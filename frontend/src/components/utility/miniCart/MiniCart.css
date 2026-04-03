@@ -1,0 +1,15 @@
+.MiniCart-products {
+  width: 100%;
+  height: calc(100vh - 220px);
+  overflow: auto;
+}
+
+.MiniCart-item-image {
+  width: 100px;
+  height: 100px;
+}
+
+.MiniCart-item-image > img {
+  max-width: 100%;
+  max-height: 100%;
+}

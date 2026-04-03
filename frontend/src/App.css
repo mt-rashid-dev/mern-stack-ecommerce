@@ -12,3 +12,8 @@
   cursor: not-allowed !important;
   pointer-events: auto !important;
 }
+
+.small-button {
+  width: 32px;
+  height: 32px;
+}
