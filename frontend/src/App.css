@@ -17,3 +17,11 @@
   width: 32px;
   height: 32px;
 }
+
+.bg-color-AliceBlue {
+  background-color: #F0F8FF;
+}
+
+.bg-color-DarkSlateGray {
+  background-color: #2F4F4F;
+}

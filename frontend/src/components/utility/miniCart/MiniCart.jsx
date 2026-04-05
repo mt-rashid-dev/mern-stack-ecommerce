@@ -2,6 +2,7 @@ import "./MiniCart.css";
 import defaultImage from "../../../assets/image-2935360_1280.png";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
 import { increment, decrement } from "../../../features/cart/cartSlice";
@@ -11,6 +12,7 @@ const MiniCart = () => {
   const cart = useSelector((state) => state.cartReducer.cart);
   const total = useSelector((state) => state.cartReducer.total);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     toggleStyle();
@@ -41,7 +43,7 @@ const MiniCart = () => {
           key={item._id}
           className="d-flex mb-2"
         >
-          <div className="MiniCart-item-image">
+          <div className="MiniCart-image bg-light">
             {item.img !== "" && <img
               src={item.img}
               alt=""
@@ -52,16 +54,14 @@ const MiniCart = () => {
             />}
           </div>
           <div className="flex-fill px-2">
-            <h6 className="fw-bold">{item.title}</h6>
-            <div className="d-flex justify-content-between">
-              <p>
+            <h5 className="fw-bold p-0 m-0">{item.title}</h5>
+            <div className="d-flex justify-content-between fw-bold pb-3">
+              <p className="m-0 p-0 pe-2">
                 {item.price > item.discountedPrice? <span>
                   <strike>${item.price}</strike> <span>${item.discountedPrice.toFixed(2)}</span>
-                </span> : <span>${item.price}</span>}&nbsp;
-                <i className="bi bi-x"></i>&nbsp;
-                <span>{item.quantity}</span>
+                </span> : <span>${item.price}</span>}
               </p>
-              <p className="fw-bold">${item.discountedPrice*item.quantity.toFixed(2)}</p>
+              <p className="m-0 p-0">${item.discountedPrice*item.quantity.toFixed(2)}</p>
             </div>
             <div>
               <Button
@@ -83,11 +83,12 @@ const MiniCart = () => {
           </div>
         </div>)}
       </div>
-      <div className="MiniCart-buttons">
+      <div className="MiniCart-info">
         <h6 className="fw-bold text-end">Total: ${total.toFixed(2)}</h6>
         <Button
           variant="secondary"
           className="d-block w-100 mb-2"
+          onClick={() => navigate("/cart")}
         >
           View Cart
         </Button>

@@ -82,10 +82,8 @@ const Shop = () => {
       pdHeader.classList.remove("border-dark");
       pdHeader.classList.add("border-light");
       for (let i = 0; i < pages.length; i++) {
-        pages[i].classList.remove("border-dark");
-        pages[i].classList.add("border-light");
-        pages[i].classList.remove("text-dark");
-        pages[i].classList.add("text-light");
+        pages[i].classList.remove("btn-outline-dark");
+        pages[i].classList.add("btn-outline-light");
       }
     }
 
@@ -93,10 +91,8 @@ const Shop = () => {
       pdHeader.classList.remove("border-light");
       pdHeader.classList.add("border-dark");
       for (let i = 0; i < pages.length; i++) {
-        pages[i].classList.remove("border-light");
-        pages[i].classList.add("border-dark");
-        pages[i].classList.remove("text-light");
-        pages[i].classList.add("text-dark");
+        pages[i].classList.remove("btn-outline-light");
+        pages[i].classList.add("btn-outline-dark");
       }
     }
   }

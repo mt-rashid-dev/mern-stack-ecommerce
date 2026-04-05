@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import Layout from "./components/utility/layout/Layout";
 import Home from "./components/home/Home";
 import Shop from "./components/shop/Shop";
+import Cart from "./components/cart/Cart";
 
 const App = () => {
   const theme = useSelector((state) => state.themeReducer.theme);
@@ -32,7 +33,9 @@ const App = () => {
 			  <Route path="/shop" element={<Layout>
 					<Shop/>
 				</Layout>}/>
-			  <Route path="/cart" element={<Layout><div>Cart</div></Layout>}/>
+			  <Route path="/cart" element={<Layout>
+					<Cart/>
+				</Layout>}/>
 			  <Route path="/categories" element={<Layout><div>Categories</div></Layout>}/>
 			  <Route path="/dashboard" element={<Layout><div>Dashboard</div></Layout>}/>
 			  <Route path="/sign-in" element={<Layout><div>Sign-In</div></Layout>}/>
