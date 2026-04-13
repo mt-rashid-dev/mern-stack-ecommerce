@@ -9,6 +9,7 @@ import Layout from "./components/utility/layout/Layout";
 import Home from "./components/home/Home";
 import Shop from "./components/shop/Shop";
 import Cart from "./components/cart/Cart";
+import Signup from "./components/signup/Signup";
 
 const App = () => {
   const theme = useSelector((state) => state.themeReducer.theme);
@@ -39,7 +40,9 @@ const App = () => {
 			  <Route path="/categories" element={<Layout><div>Categories</div></Layout>}/>
 			  <Route path="/dashboard" element={<Layout><div>Dashboard</div></Layout>}/>
 			  <Route path="/sign-in" element={<Layout><div>Sign-In</div></Layout>}/>
-			  <Route path="/sign-up" element={<Layout><div>Sign-Up</div></Layout>}/>
+			  <Route path="/sign-up" element={<Layout>
+					<Signup/>
+				</Layout>}/>
 			  <Route path="/sign-out" element={<Layout><div>Sign-Out</div></Layout>}/>
 				<Route path="*" element={<Layout>
 					<p>404 Error! Sorry, the page you are looking for was not found.</p>

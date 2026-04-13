@@ -188,7 +188,7 @@ const Shop = () => {
             <SingleProduct product={product}/>
           </Col>)}
         </Row>
-        <div className="text-center my-3">
+        <div className="text-center mt-3">
           <Button
             variant="outline-dark"
             className="Shop-pages"

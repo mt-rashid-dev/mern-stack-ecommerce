@@ -12,6 +12,7 @@ import MiniCart from "../miniCart/MiniCart";
 
 const Header = () => {
   const theme = useSelector((state) => state.themeReducer.theme);
+	const role = useSelector((state) => state.authReducer.role);
   const dispatch = useDispatch();
   const [themeIcon, setThemeIcon] = useState(<i className="bi bi-moon"></i>);
 	const [show, setShow] = useState(false);
@@ -37,31 +38,33 @@ const Header = () => {
 	      <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
 	      <Navbar.Collapse id="responsive-navbar-nav">
 	        <Nav className="me-auto">
-			  <Nav.Link as={Link} to="/">Home</Nav.Link>
-			  <Nav.Link as={Link} to="/shop">Shop</Nav.Link>
-			  <Nav.Link as={Link} to="/categories">Categories</Nav.Link>
+						<Nav.Link as={Link} to="/">Home</Nav.Link>
+						<Nav.Link as={Link} to="/shop">Shop</Nav.Link>
+						<Nav.Link as={Link} to="/categories">Categories</Nav.Link>
 	        </Nav>
 	        <Nav>
-			  <Nav.Link
-			    as={Link}
-					to={null}
-					onClick={toggleTheme}
-			  >
-			    {themeIcon}
-			  </Nav.Link>
-			  <Nav.Link
-					as={Link}
-					to={null}
-					onClick={handleShow}
-				>
-					<i className="bi bi-cart4"></i>
-				</Nav.Link>
-			  <NavDropdown title={<i className="bi bi-person-circle"></i>} id="collapsible-nav-dropdown" align="end">
-			    <NavDropdown.Item as={Link} to="/sign-in">Sign-In</NavDropdown.Item>
-			    <NavDropdown.Item as={Link} to="/sign-up">Sign-Up</NavDropdown.Item>
-				<NavDropdown.Item as={Link} to="/dashboard">Dashboard</NavDropdown.Item>
-				<NavDropdown.Item as={Link} to="/sign-up">Sign-Out</NavDropdown.Item>
-			  </NavDropdown>
+						<Nav.Link
+							as={Link}
+							to={null}
+							onClick={toggleTheme}
+						>
+							{themeIcon}
+						</Nav.Link>
+						<Nav.Link
+							as={Link}
+							to={null}
+							onClick={handleShow}
+						>
+							<i className="bi bi-cart4"></i>
+						</Nav.Link>
+						<NavDropdown title={<i className="bi bi-person-circle"></i>} id="collapsible-nav-dropdown" align="end">
+							{role === "" && <NavDropdown.Item as={Link} to="/sign-in">Sign-In</NavDropdown.Item>}
+							{role === "" && <NavDropdown.Item as={Link} to="/sign-up">Sign-Up</NavDropdown.Item>}
+							{role === "user" && <NavDropdown.Item as={Link} to="/profile">Profile</NavDropdown.Item>}
+							{role === "user" && <NavDropdown.Item as={Link} to="/profile">My Orders</NavDropdown.Item>}
+							{role === "admin" && <NavDropdown.Item as={Link} to="/dashboard">Dashboard</NavDropdown.Item>}
+							{role !== "" &&<NavDropdown.Item as={Link} to="/sign-up">Sign-Out</NavDropdown.Item>}
+						</NavDropdown>
 	        </Nav>
 	      </Navbar.Collapse>
 	    </Container>
