@@ -15,6 +15,7 @@ import {
   storeEmail,
   storeRole
 } from "../../features/auth/authSlice";
+import { sleep } from "../../helpers";
 
 const Signup = () => {
   const [firstName, setFirstName] = useState("");
@@ -24,8 +25,8 @@ const Signup = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
-  const [toastMessage, setToastMessage] = useState("Hello World!");
-  const [toastHeading, setToastHeading] = useState("Heading");
+  const [toastMessage, setToastMessage] = useState("");
+  const [toastHeading, setToastHeading] = useState("");
   const [toastSuccess, setToastSuccess] = useState(true);
   const [showToast, setShowToast] = useState(false);
   const dispatch = useDispatch();
@@ -57,7 +58,6 @@ const Signup = () => {
 
     axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/auth/sign-up`, newUser, { withCredentials: true })
     .then(async (res) => {
-      console.log(res.data);
       dispatch(storeProfilePicture(res.data.profilePicture));
       dispatch(storeFirstName(res.data.firstName));
       dispatch(storeLastName(res.data.lastName));
@@ -85,12 +85,6 @@ const Signup = () => {
       setShowToast(await sleep(3000, false));
     });
   };
-
-  const sleep = (ms, value) => new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(value);
-    }, ms);
-  });
 
   return (
     <div className="w-max">

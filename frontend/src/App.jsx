@@ -10,6 +10,7 @@ import Home from "./components/home/Home";
 import Shop from "./components/shop/Shop";
 import Cart from "./components/cart/Cart";
 import Signup from "./components/signup/Signup";
+import Signout from "./components/signout/Signout";
 
 const App = () => {
   const theme = useSelector((state) => state.themeReducer.theme);
@@ -43,7 +44,9 @@ const App = () => {
 			  <Route path="/sign-up" element={<Layout>
 					<Signup/>
 				</Layout>}/>
-			  <Route path="/sign-out" element={<Layout><div>Sign-Out</div></Layout>}/>
+			  <Route path="/sign-out" element={<Layout>
+					<Signout/>
+				</Layout>}/>
 				<Route path="*" element={<Layout>
 					<p>404 Error! Sorry, the page you are looking for was not found.</p>
 				</Layout>}/>

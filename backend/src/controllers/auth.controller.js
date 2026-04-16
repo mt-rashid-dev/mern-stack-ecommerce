@@ -49,6 +49,15 @@ const signup = async (req, res, next) => {
 
 const singin = () => {};
 
-const signout = () => {};
+const signout = (req, res, next) => {
+  try {
+    res.cookie("token", { maxAge: 0 });
+    res.status(200).send({ message: "Sign-Out Successful", success: true });
+  } catch (error) {
+    next(error);
+  }
+  console.log(req.cookies);
+  
+};
 
-module.exports = { signup };
+module.exports = { signup, signout };

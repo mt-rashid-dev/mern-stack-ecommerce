@@ -26,10 +26,17 @@ export const authSlice = createSlice({
     },
     storeRole: (state, action) => {
       state.role = action.payload;
+    },
+    signout: (state) => {
+      state.profilePicture = "";
+      state.firstName = "";
+      state.lastName = "";
+      state.email = "";
+      state.role = "";
     }
   }
 });
 
-export const { storeProfilePicture, storeFirstName, storeLastName, storeEmail, storeRole } = authSlice.actions;
+export const { storeProfilePicture, storeFirstName, storeLastName, storeEmail, storeRole, signout } = authSlice.actions;
 
 export default authSlice.reducer;

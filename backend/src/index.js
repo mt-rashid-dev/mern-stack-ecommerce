@@ -1,6 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 const { connectdb } = require("./utilities/db.js");
 const productRoutes = require("./routes/product.routes.js");
@@ -13,6 +14,7 @@ app.use(cors({
   origin: "http://localhost:3000",
   credentials: true
 }));
+app.use(cookieParser());
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
