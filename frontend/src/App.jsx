@@ -9,6 +9,7 @@ import Layout from "./components/utility/layout/Layout";
 import Home from "./components/home/Home";
 import Shop from "./components/shop/Shop";
 import Cart from "./components/cart/Cart";
+import Signin from "./components/signin/Signin";
 import Signup from "./components/signup/Signup";
 import Signout from "./components/signout/Signout";
 
@@ -40,7 +41,9 @@ const App = () => {
 				</Layout>}/>
 			  <Route path="/categories" element={<Layout><div>Categories</div></Layout>}/>
 			  <Route path="/dashboard" element={<Layout><div>Dashboard</div></Layout>}/>
-			  <Route path="/sign-in" element={<Layout><div>Sign-In</div></Layout>}/>
+			  <Route path="/sign-in" element={<Layout>
+					<Signin/>
+				</Layout>}/>
 			  <Route path="/sign-up" element={<Layout>
 					<Signup/>
 				</Layout>}/>

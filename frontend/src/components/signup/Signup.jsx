@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -143,6 +143,7 @@ const Signup = () => {
             Sign Up
           </Button>
         </Form>
+        <h5 className="mt-3">Do not have an account? <Link to="/sign-in">Sign In</Link> now.</h5>
       </Container>
       {showToast && <ToastBox
         heading={toastHeading}
