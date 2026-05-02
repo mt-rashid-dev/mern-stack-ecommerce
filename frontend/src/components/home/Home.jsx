@@ -202,7 +202,7 @@ const Home = () => {
 					<Button variant={"success"}>View All</Button>
 				</div>
 				<Row xs={1} sm={2} md={3} lg={4} xxl={6} className="g-3">
-					{products.map(product => <Col>
+					{products.map(product => <Col key={product._id}>
 						<SingleProduct product={product}/>
 					</Col>)}
 				</Row>

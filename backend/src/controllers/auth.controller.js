@@ -54,6 +54,7 @@ const signin = async (req, res, next) => {
     const user = await User.findOne({ email });
 
     if (!user) {
+      console.log(user);
       return res.status(400).send({
         message: "Invalid email or password",
         type: "credentials-error",
@@ -96,4 +97,19 @@ const signout = (req, res, next) => {
   }
 };
 
-module.exports = { signup, signin, signout };
+const getCurrentUser = async (req, res, next) => {
+  try {
+    const user = req.user;
+    res.status(200).send({
+      profilePicture: user.profilePicture,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      role: user.role
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { signup, signin, signout, getCurrentUser };

@@ -7,12 +7,17 @@ import Button from "react-bootstrap/Button";
 
 import { increment, decrement } from "../../features/cart/cartSlice";
 import ComponentHeader from "../utility/componentHeader/ComponentHeader";
+import useCheckout from "../../hooks/useCheckout";
 
 const Cart = () => {
   const theme = useSelector((state) => state.themeReducer.theme);
   const cart = useSelector((state) => state.cartReducer.cart);
   const total = useSelector((state) => state.cartReducer.total);
+  const firstName = useSelector((state) => state.authReducer.firstName);
+  const lastName = useSelector((state) => state.authReducer.lastName);
+  const email = useSelector((state) => state.authReducer.email);
   const dispatch = useDispatch();
+  const { checkout } = useCheckout();
 
   useEffect(() => {
     toggleStyle();
@@ -44,6 +49,17 @@ const Cart = () => {
         cartQuantity[i].classList.add("btn-outline-dark");
       }
     }
+  };
+
+  const handleCheckout = async () => {
+    const orderData = {
+      firstName,
+      lastName,
+      email,
+      cart,
+      total
+    };
+    await checkout(orderData);
   };
 
   return (
@@ -100,6 +116,7 @@ const Cart = () => {
         <Button
           variant="primary"
           className="d-block w-100"
+          onClick={handleCheckout}
         >
           Checkout
         </Button>

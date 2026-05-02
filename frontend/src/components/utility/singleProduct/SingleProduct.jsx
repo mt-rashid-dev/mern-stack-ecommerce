@@ -44,12 +44,12 @@ const SingleProduct = ({ product }) => {
   return (
     <div className="SingleProduct p-4 text-center">
       <div className="SingleProduct-image-div mb-2 d-flex justify-content-center align-items-center">
-        {!product.imgPath && <img
+        {!product.img && <img
 					src={defaultImage}
 					alt=""
 					className="SingleProduct-image"
 				/>}
-        {product.imgPath && <img
+        {product.img && <img
 					src={`${import.meta.env.VITE_SERVER_BASE_URL}/${product.imgPath}`}
 					alt=""
 					className="SingleProduct-image"

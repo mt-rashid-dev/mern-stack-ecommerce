@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const { connectdb } = require("./utilities/db.js");
 const productRoutes = require("./routes/product.routes.js");
 const authRoutes = require("./routes/auth.routes.js");
+const orderRoutes = require("./routes/order.routes.js");
 
 const app = express();
 const port = 5000;
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/products", productRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/orders", orderRoutes);
 
 app.use((req, res, next) => {
   const error = new Error("404 not found");
