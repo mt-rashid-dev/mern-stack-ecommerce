@@ -25,3 +25,19 @@
 .bg-color-DarkSlateGray {
   background-color: #2F4F4F;
 }
+
+/* Animation Styles */
+.zoom-in {
+  animation-name: zoomInAnimation;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoomInAnimation {
+  from {
+    transform: scale(0, 0);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}

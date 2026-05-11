@@ -12,7 +12,6 @@ export const cartSlice = createSlice({
     addToCart: (state, action) => {
       const discountedPrice = action.payload.price * (1 - action.payload.discount / 100);
       const newItem = { ...action.payload, quantity: 1, discountedPrice };
-      console.log(newItem);
       state.cart.push(newItem);
       state.total += discountedPrice;
     },

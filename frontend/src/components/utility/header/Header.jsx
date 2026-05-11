@@ -60,8 +60,8 @@ const Header = () => {
 						<NavDropdown title={<i className="bi bi-person-circle"></i>} id="collapsible-nav-dropdown" align="end">
 							{role === "" && <NavDropdown.Item as={Link} to="/sign-in">Sign In</NavDropdown.Item>}
 							{role === "" && <NavDropdown.Item as={Link} to="/sign-up">Sign Up</NavDropdown.Item>}
-							{role === "user" && <NavDropdown.Item as={Link} to="/profile">Profile</NavDropdown.Item>}
-							{role === "user" && <NavDropdown.Item as={Link} to="/my-orders">My Orders</NavDropdown.Item>}
+							{(role === "user" || role === "admin") && <NavDropdown.Item as={Link} to="/my-profile">My Profile</NavDropdown.Item>}
+							{(role === "user" || role === "admin") && <NavDropdown.Item as={Link} to="/my-orders">My Orders</NavDropdown.Item>}
 							{role === "admin" && <NavDropdown.Item as={Link} to="/dashboard">Dashboard</NavDropdown.Item>}
 							{role !== "" &&<NavDropdown.Item as={Link} to="/sign-out">Sign Out</NavDropdown.Item>}
 						</NavDropdown>

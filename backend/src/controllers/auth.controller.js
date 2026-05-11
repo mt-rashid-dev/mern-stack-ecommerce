@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 const User = require("../models/user.model.js");
 const { hashPassword, generateToken, verifyPassword } = require("../utilities/auth.js");
 
@@ -112,4 +114,49 @@ const getCurrentUser = async (req, res, next) => {
   }
 };
 
-module.exports = { signup, signin, signout, getCurrentUser };
+const editProfile = async (req, res, next) => {
+  try {
+    const userId = req.user._id;
+    const editedFirstName = req.body.editedFirstName;
+    const editedLastName = req.body.editedLastName;
+    const editedEmail = req.body.editedEmail;
+    const previousPicture = req.user.profilePicture;
+    let newPicture = "";
+
+    if (req.file) {
+      newPicture = req.file.path;
+      fs.unlink(previousPicture, (err) => {
+        if (err) {
+          next(err);
+        } else {
+          console.log(`${previousPicture} was deleted`);
+        }
+      });
+    } else {
+      newPicture = previousPicture;
+    }
+
+    await User.findOneAndUpdate({ _id: userId }, { $set: {
+      profilePicture: newPicture,
+      firstName: editedFirstName,
+      lastName: editedLastName,
+      email: editedEmail
+    } });
+
+    const user = await User.findOne({ _id: userId }, { password: 0 });
+
+    res.status(200).send({
+      user,
+      message: "Profile updated successfully",
+      success: true
+    });
+  } catch (error) {
+    res.status(500).send({
+      message: "Failed to update profile",
+      success: false,
+      error: error.message
+    });
+  }
+};
+
+module.exports = { signup, signin, signout, getCurrentUser, editProfile };

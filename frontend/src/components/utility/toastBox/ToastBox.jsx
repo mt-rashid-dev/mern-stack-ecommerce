@@ -19,7 +19,7 @@ const ToastBox = (props) => {
       position="top-end"
       style={{ zIndex: 1 }}
     >
-      <Toast className="">
+      <Toast animation={false} className="zoom-in">
         <div
           className="d-flex justify-content-between align-items-center"
           style={ headingStyle }

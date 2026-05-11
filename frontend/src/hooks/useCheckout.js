@@ -11,6 +11,6 @@ const useCheckout = () => {
   };
 
   return { checkout };
-}
+};
 
 export default useCheckout;

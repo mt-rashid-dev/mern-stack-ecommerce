@@ -17,6 +17,7 @@ import Layout from "./components/utility/layout/Layout";
 import Home from "./components/home/Home";
 import Shop from "./components/shop/Shop";
 import Cart from "./components/cart/Cart";
+import MyProfile from "./components/myProfile/MyProfile";
 import Signin from "./components/signin/Signin";
 import Signup from "./components/signup/Signup";
 import Signout from "./components/signout/Signout";
@@ -42,7 +43,6 @@ const App = () => {
       dispatch(storeLastName(res.data.lastName));
       dispatch(storeEmail(res.data.email));
       dispatch(storeRole(res.data.role));
-			console.log(res.data);
 		})
 		.catch(error => console.log(error));
   }, [theme]);
@@ -61,6 +61,9 @@ const App = () => {
 					<Cart/>
 				</Layout>}/>
 			  <Route path="/categories" element={<Layout><div>Categories</div></Layout>}/>
+				<Route path="/my-profile" element={<Layout>
+					<MyProfile/>
+				</Layout>}/>
 			  <Route path="/dashboard" element={<Layout><div>Dashboard</div></Layout>}/>
 			  <Route path="/sign-in" element={<Layout>
 					<Signin/>

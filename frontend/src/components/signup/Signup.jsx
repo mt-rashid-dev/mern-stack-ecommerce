@@ -92,7 +92,7 @@ const Signup = () => {
 
       <Container className="mt-5">
         <Form onSubmit={handleSignup}>
-          <Form.Group className="mb-3" controlId="formPlaintext">
+          <Form.Group className="mb-3" controlId="inputText">
             <Form.Label>First Name</Form.Label>
             <Form.Control
               type="text"
@@ -101,7 +101,7 @@ const Signup = () => {
               required
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formPlaintext">
+          <Form.Group className="mb-3" controlId="inputText">
             <Form.Label>Last Name</Form.Label>
             <Form.Control
               type="text"
@@ -110,7 +110,7 @@ const Signup = () => {
               required
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formPlaintextEmail">
+          <Form.Group className="mb-3" controlId="inputEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control
               type="email"
@@ -119,7 +119,7 @@ const Signup = () => {
               required
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formPlaintextPassword">
+          <Form.Group className="mb-3" controlId="inputPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
@@ -129,7 +129,7 @@ const Signup = () => {
             />
             <p className="text-danger">{passwordError}</p>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formPlaintextPassword">
+          <Form.Group className="mb-3" controlId="inputPassword">
             <Form.Label>Confirm Password</Form.Label>
             <Form.Control
               type="password"

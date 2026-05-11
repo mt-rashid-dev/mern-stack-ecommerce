@@ -18,6 +18,7 @@ app.use(cors({
 app.use(cookieParser());
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
+app.use("/uploads", express.static("uploads"));
 
 app.get("/", (req, res) => {
   res.send("Welcome to MERN-STACK-ECOMMERCE Backend App");
