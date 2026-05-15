@@ -22,6 +22,7 @@ import Signin from "./components/signin/Signin";
 import Signup from "./components/signup/Signup";
 import Signout from "./components/signout/Signout";
 import VerifyOrder from "./components/verifyOrder/VerifyOrder";
+import MyOrders from "./components/myOrders/MyOrders";
 
 const App = () => {
   const theme = useSelector((state) => state.themeReducer.theme);
@@ -63,6 +64,9 @@ const App = () => {
 			  <Route path="/categories" element={<Layout><div>Categories</div></Layout>}/>
 				<Route path="/my-profile" element={<Layout>
 					<MyProfile/>
+				</Layout>}/>
+				<Route path="/my-orders" element={<Layout>
+					<MyOrders/>
 				</Layout>}/>
 			  <Route path="/dashboard" element={<Layout><div>Dashboard</div></Layout>}/>
 			  <Route path="/sign-in" element={<Layout>

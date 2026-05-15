@@ -2,6 +2,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const Order = require("../models/order.model");
 const Product = require("../models/product.model");
+const User = require("../models/user.model");
 
 const checkout = async (req, res, next) => {
   try {
@@ -130,4 +131,26 @@ const verifyOrder = async (req, res, next) => {
   }
 };
 
-module.exports = { checkout, verifyCheckout, verifyOrder };
+const getMyOrders = async (req, res) => {
+  try {
+    const email = req.user.email;
+    const page = req.query.page;
+
+    const myOrders = await Order.find({ email: email }).limit(8).skip((page - 1) * 8);
+    const count = await Order.find({ email: email }).countDocuments();
+    
+    res.status(200).send({
+      myOrders,
+      totalPages: Math.ceil(count / 8),
+      success: true
+    });
+  } catch (error) {
+    console.log("Error in getMyOrders function:", error);
+    res.status(500).send({
+      message: "Internal server error",
+      success: false
+    });
+  }
+};
+
+module.exports = { checkout, verifyCheckout, verifyOrder, getMyOrders };

@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { checkout, verifyCheckout, verifyOrder } = require("../controllers/order.controller");
+const { checkout, verifyCheckout, verifyOrder, getMyOrders } = require("../controllers/order.controller");
 const { verifyToken } = require("../utilities/auth");
 
 const orderRoutes = express.Router();
@@ -13,5 +13,8 @@ orderRoutes.get("/verify-checkout", verifyCheckout);
 
 // POST: /api/orders/verify-order
 orderRoutes.post("/verify-order", verifyOrder);
+
+// GET: /api/orders/my-orders
+orderRoutes.get("/my-orders", verifyToken, getMyOrders);
 
 module.exports = orderRoutes;
