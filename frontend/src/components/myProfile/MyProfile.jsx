@@ -109,26 +109,26 @@ const MyProfile = () => {
           {!profilePicture && <img src={defaultProfilePicture} alt="" style={profilePictureStyle}/>}
           {profilePicture && <img src={import.meta.env.VITE_API_BASE_URL+"/"+profilePicture} alt="" style={profilePictureStyle}/>}
         </div>
-        <Row className="border border-2 border-primary fs-5 mx-3 mb-3">
-          <Col xs={12} sm={4} className="bg-primary text-light py-2">First Name</Col>
+        <Row className="border border-2 border-secondary fs-5 mx-3 mb-3">
+          <Col xs={12} sm={4} className="bg-secondary text-light py-2">First Name</Col>
           <Col xs={12} sm={8} className="py-2" data-bs-toggle="tooltip" title={firstName}>{firstName}</Col>
         </Row>
-        <Row className="border border-2 border-primary fs-5 mx-3 mb-3">
-          <Col xs={12} sm={4} className="bg-primary text-light py-2">Last Name</Col>
+        <Row className="border border-2 border-secondary fs-5 mx-3 mb-3">
+          <Col xs={12} sm={4} className="bg-secondary text-light py-2">Last Name</Col>
           <Col xs={12} sm={8} className="py-2" data-bs-toggle="tooltip" title={lastName}>{lastName}</Col>
         </Row>
-        <Row className="border border-2 border-primary fs-5 mx-3 mb-3">
-          <Col xs={12} sm={4} className="bg-primary text-light py-2">Email</Col>
+        <Row className="border border-2 border-secondary fs-5 mx-3 mb-3">
+          <Col xs={12} sm={4} className="bg-secondary text-light py-2">Email</Col>
           <Col xs={12} sm={8} className="py-2 text-truncate" data-bs-toggle="tooltip" title={email}>{email}</Col>
         </Row>
-        <Row className="border border-2 border-primary mx-3 mb-3">
+        <Row className="border border-2 border-success mx-3 mb-3">
           <Col className="p-0">
-            <Button variant="primary" className="d-block w-100 m-0 rounded-0 fs-5" onClick={handleShowModal}>Edit Profile</Button>
+            <Button variant="success" className="d-block w-100 m-0 rounded-0 fs-5" onClick={handleShowModal}>Edit Profile</Button>
           </Col>
         </Row>
-        <Row className="border border-2 border-primary mx-3 mb-3">
+        <Row className="border border-2 border-success mx-3 mb-3">
           <Col className="p-0">
-            <Button variant="primary" className="d-block w-100 m-0 rounded-0 fs-5">Change Password</Button>
+            <Button variant="success" className="d-block w-100 m-0 rounded-0 fs-5">Change Password</Button>
           </Col>
         </Row>
       </Container>
@@ -183,7 +183,7 @@ const MyProfile = () => {
           <Button variant="secondary" onClick={handleCloseModal}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleSave}>
+          <Button variant="success" onClick={handleSave}>
             Save Changes
           </Button>
         </Modal.Footer>

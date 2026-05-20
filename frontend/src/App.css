@@ -18,12 +18,40 @@
   height: 32px;
 }
 
+.btn-light-2 {
+  background-color: #EEE7CB;
+  color: var(--bs-dark);
+  cursor: pointer;
+}
+
+.btn-light-2:hover {
+  opacity: 70%;
+}
+
+.btn-dark-2 {
+  background-color: var(--bs-dark);
+  color: var(--bs-light);
+  cursor: pointer;
+}
+
+.btn-dark-2:hover {
+  opacity: 80%;
+}
+
 .bg-color-AliceBlue {
   background-color: #F0F8FF;
 }
 
+.bg-color-CornSilk {
+  background-color: #FFF8DC;
+}
+
 .bg-color-DarkSlateGray {
   background-color: #2F4F4F;
+}
+
+.bg-color-DarkCharcoal {
+  background-color: #333;
 }
 
 /* Animation Styles */

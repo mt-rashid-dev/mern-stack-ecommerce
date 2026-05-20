@@ -21,13 +21,13 @@ const Header = () => {
   const handleClose = () => setShow(false);
   
   const toggleTheme = () => {
-	if (theme === "light") {
-	  dispatch(enableDarkTheme());
-	  setThemeIcon(<i className="bi bi-sun"></i>);
-	} else {
-	  dispatch(enableLightTheme());
-	  setThemeIcon(<i className="bi bi-moon"></i>);
-	}
+		if (theme === "light") {
+			dispatch(enableDarkTheme());
+			setThemeIcon(<i className="bi bi-sun"></i>);
+		} else {
+			dispatch(enableLightTheme());
+			setThemeIcon(<i className="bi bi-moon"></i>);
+		}
   };
   
   return (

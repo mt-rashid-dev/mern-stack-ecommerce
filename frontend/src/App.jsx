@@ -23,6 +23,15 @@ import Signup from "./components/signup/Signup";
 import Signout from "./components/signout/Signout";
 import VerifyOrder from "./components/verifyOrder/VerifyOrder";
 import MyOrders from "./components/myOrders/MyOrders";
+import DashboardHome from "./components/dashboard/dashboardHome/DashboardHome";
+import Overview from "./components/dashboard/overview/Overview";
+import PendingOrders from "./components/dashboard/pendingOrders/PendingOrders";
+import DeliveredOrders from "./components/dashboard/deliveredOrders/DeliveredOrders";
+import Products from "./components/dashboard/products/Products";
+import NewProduct from "./components/dashboard/newProduct/NewProduct";
+import UpdateProduct from "./components/dashboard/updateProduct/UpdateProduct";
+import DeleteProduct from "./components/dashboard/deleteProduct/DeleteProduct";
+import Users from "./components/dashboard/users/Users";
 
 const App = () => {
   const theme = useSelector((state) => state.themeReducer.theme);
@@ -68,7 +77,6 @@ const App = () => {
 				<Route path="/my-orders" element={<Layout>
 					<MyOrders/>
 				</Layout>}/>
-			  <Route path="/dashboard" element={<Layout><div>Dashboard</div></Layout>}/>
 			  <Route path="/sign-in" element={<Layout>
 					<Signin/>
 				</Layout>}/>
@@ -81,6 +89,16 @@ const App = () => {
 				<Route path="/verify-order" element={<Layout>
 					<VerifyOrder/>
 				</Layout>}/>
+				<Route path="/dashboard" element={<DashboardHome/>}>
+					<Route index element={<Overview/>}/>
+					<Route path="/dashboard/pending-orders" element={<PendingOrders/>}/>
+					<Route path="/dashboard/delivered-orders" element={<DeliveredOrders/>}/>
+					<Route path="/dashboard/products" element={<Products/>}/>
+					<Route path="/dashboard/new-product" element={<NewProduct/>}/>
+					<Route path="/dashboard/update-product" element={<UpdateProduct/>}/>
+					<Route path="/dashboard/delete-product" element={<DeleteProduct/>}/>
+					<Route path="/dashboard/users" element={<Users/>}/>
+				</Route>
 				<Route path="*" element={<Layout>
 					<p>404 Error! Sorry, the page you are looking for was not found.</p>
 				</Layout>}/>

@@ -22,7 +22,6 @@ const Home = () => {
 	useEffect(() => {
 		toggleStyle();
 		fetchProducts();
-
 	}, [theme]);
 	
 	const toggleStyle = () => {
