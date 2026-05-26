@@ -77,4 +77,5 @@
   width: 100%;
   height: calc(100% - 40px);
   padding: 0 8px;
+  overflow-y: auto;
 }

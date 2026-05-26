@@ -66,15 +66,29 @@ const verifyToken = async (req, res, next) => {
   }
 };
 
-const verifyUser = () => {};
+const verifyAdmin = (req, res, next) => {
+  try {
+    if (req.user.role !== "admin") {
+      return res.status(403).send({
+        message: "Admin access required",
+        success: false
+      });
+    }
 
-const verifyAdmin = () => {};
+    next();
+  } catch (error) {
+    console.log(`Error - failed to verify admin: ${error}`);
+    res.status(500).send({
+      message: "Internal server error",
+      success: false
+    })
+  }
+};
 
 module.exports = {
   hashPassword,
   verifyPassword,
   generateToken,
   verifyToken,
-  verifyUser,
   verifyAdmin
 };

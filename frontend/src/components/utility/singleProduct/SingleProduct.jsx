@@ -50,7 +50,7 @@ const SingleProduct = ({ product }) => {
 					className="SingleProduct-image"
 				/>}
         {product.img && <img
-					src={`${import.meta.env.VITE_SERVER_BASE_URL}/${product.imgPath}`}
+					src={import.meta.env.VITE_API_BASE_URL + "/" + product.img}
 					alt=""
 					className="SingleProduct-image"
 				/>}

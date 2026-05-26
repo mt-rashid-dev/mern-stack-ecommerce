@@ -42,4 +42,30 @@ const getProducts = async (req, res, next) => {
 	}
 };
 
-module.exports = { getProducts };
+const addNewProduct = async (req, res) => {
+	try {
+		const newProduct = new Product({
+			img: req.file.path,
+			title: req.body.productTitle,
+			description: req.body.description,
+			category: req.body.category,
+			discount: req.body.discount,
+			price: req.body.price,
+			inStock: req.body.inStock
+		});
+
+		await newProduct.save();
+		res.status(201).send({
+			message: "New product added successfully",
+			success: true
+		});
+	} catch (error) {
+		console.log(`Error - failed to add new product: ${error}`);
+		res.status(500).send({
+			message: "Internal server error",
+			success: false
+		});
+	}
+};
+
+module.exports = { getProducts, addNewProduct };
