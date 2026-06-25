@@ -45,7 +45,11 @@ const signup = async (req, res, next) => {
       role: newUser.role
     });
   } catch (error) {
-    next(error);
+    console.log(`Error - failed to complete sign up process: ${error}`);
+    res.status(500).send({
+      message: "Internal server error",
+      success: false
+    });
   }
 };
 
@@ -125,9 +129,9 @@ const editProfile = async (req, res, next) => {
 
     if (req.file) {
       newPicture = req.file.path;
-      fs.unlink(previousPicture, (err) => {
-        if (err) {
-          next(err);
+      fs.unlink(previousPicture, (error) => {
+        if (error) {
+          console.log(`Error - failed to delete profile picture: ${error}`);
         } else {
           console.log(`${previousPicture} was deleted`);
         }

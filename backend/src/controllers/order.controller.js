@@ -59,7 +59,11 @@ const checkout = async (req, res, next) => {
       sessionURL: session.url
     });
   } catch (error) {
-    next(error);
+    console.log(`Error - failed to make a new checkout session: ${error}`);
+    res.status(500).send({
+      message: "Internal server error",
+      success: false
+    })
   }
 };
 

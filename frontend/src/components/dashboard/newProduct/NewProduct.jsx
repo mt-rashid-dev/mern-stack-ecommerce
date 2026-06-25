@@ -146,6 +146,7 @@ const NewProduct = () => {
             <Form.Control
               type="number"
               min={0}
+              max={100}
               step={1}
               value={discount}
               onChange={(e) => setDiscount(e.target.value)}
@@ -153,7 +154,7 @@ const NewProduct = () => {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="inputNumber">
-            <Form.Label>Price</Form.Label>
+            <Form.Label>Price (USD)</Form.Label>
             <Form.Control
               type="number"
               min={0}

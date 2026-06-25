@@ -1,0 +1,18 @@
+.UpdateProduct-form-div {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.UpdateProduct-image-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.UpdateProduct-image-div > img {
+  max-width: 100%;
+  max-height: 100%;
+}
