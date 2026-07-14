@@ -80,7 +80,7 @@ const getProduct = async (req, res) => {
 				message: "Sorry! The product was not found",
         errorStatus: "not found",
 				success: false
-			})
+			});
 		}
 
 		res.status(200).send({
