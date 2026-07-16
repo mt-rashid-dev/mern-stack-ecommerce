@@ -25,7 +25,7 @@ const NewProduct = () => {
 
   useEffect(() => {
     toggleStyle();
-  }, [theme])
+  }, [theme]);
 
   const toggleStyle = () => {
     const heading = document.getElementById("newProductHeading");

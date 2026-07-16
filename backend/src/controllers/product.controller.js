@@ -157,9 +157,30 @@ const updateProduct = async (req, res) => {
   }
 };
 
+const deleteProduct = async (req, res) => {
+  try {
+    const productId = req.params.id;
+
+    const result = await Product.deleteOne({ _id: productId });
+    console.log(result);
+
+    res.status(200).send({
+      message: "The product deleted successfully",
+      success: true
+    });
+  } catch (error) {
+    console.log(`Error - failed to delete product: ${error}`);
+    res.status(500).send({
+      message: "Internal server error",
+      success: false
+    });
+  }
+};
+
 module.exports = {
 	getProducts,
 	addNewProduct,
   getProduct,
-  updateProduct
+  updateProduct,
+  deleteProduct
 };

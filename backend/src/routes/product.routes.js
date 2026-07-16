@@ -1,7 +1,7 @@
 const express = require("express");
 const multer = require("multer");
 
-const { getProducts, addNewProduct, getProduct, updateProduct } = require("../controllers/product.controller.js");
+const { getProducts, addNewProduct, getProduct, updateProduct, deleteProduct } = require("../controllers/product.controller.js");
 const { verifyToken, verifyAdmin } = require("../utilities/auth.js");
 
 const productRoutes = express.Router();
@@ -31,5 +31,8 @@ productRoutes.get("/get-product/:id", verifyToken, verifyAdmin, getProduct);
 
 // PUT; /api/products
 productRoutes.put("/", verifyToken, verifyAdmin, upload.single("newImage"), updateProduct);
+
+// DELETE: /api/products/:id
+productRoutes.delete("/:id", verifyToken, verifyAdmin, deleteProduct);
 
 module.exports = productRoutes;
