@@ -43,13 +43,13 @@ const DashboardHome = () => {
         headerButtons[i].classList.add("btn-dark-2");
       }
       for(let i = 0; i < dashboardLinks.length; i++) {
-        dashboardLinks[i].classList.remove("btn-light-2");
-        dashboardLinks[i].classList.add("btn-dark-2");
+        dashboardLinks[i].classList.remove("Dashboard-link-dark");
+        dashboardLinks[i].classList.add("Dashboard-link-light");
       }
-      dashboardSidebar.classList.remove("bg-color-CornSilk");
-      dashboardSidebar.classList.add("bg-color-DarkCharcoal");
-      dashboardHeader.classList.remove("bg-color-CornSilk");
-      dashboardHeader.classList.add("bg-color-DarkCharcoal");
+      dashboardSidebar.classList.remove("bg-color-light-2");
+      dashboardSidebar.classList.add("bg-color-dark-2");
+      dashboardHeader.classList.remove("bg-color-light-2");
+      dashboardHeader.classList.add("bg-color-dark-2");
     }
 
     if (theme === "light") {
@@ -58,13 +58,13 @@ const DashboardHome = () => {
         headerButtons[i].classList.add("btn-light-2");
       }
       for(let i = 0; i < dashboardLinks.length; i++) {
-        dashboardLinks[i].classList.remove("btn-dark-2");
-        dashboardLinks[i].classList.add("btn-light-2");
+        dashboardLinks[i].classList.remove("Dashboard-link-light");
+        dashboardLinks[i].classList.add("Dashboard-link-dark");
       }
-      dashboardSidebar.classList.remove("bg-color-DarkCharcoal");
-      dashboardSidebar.classList.add("bg-color-CornSilk");
-      dashboardHeader.classList.remove("bg-color-DarkCharcoal");
-      dashboardHeader.classList.add("bg-color-CornSilk");
+      dashboardSidebar.classList.remove("bg-color-dark-2");
+      dashboardSidebar.classList.add("bg-color-light-2");
+      dashboardHeader.classList.remove("bg-color-dark-2");
+      dashboardHeader.classList.add("bg-color-light-2");
     }
   };
 
@@ -89,38 +89,38 @@ const DashboardHome = () => {
 
   return (
     <div className="Dashboard-home">
-      {role === "admin" && <div className="Dashboard-sidebar Dashboard-sidebar-show bg-color-CornSilk" id="dashboardSidebar">
+      {role === "admin" && <div className="Dashboard-sidebar Dashboard-sidebar-show bg-color-light-2" id="dashboardSidebar">
         {/* sh = sidebar header */}
         <div className="Dashboard-sh">
           <h5 className="m-0 fw-bold">Dashboard</h5>
         </div>
         <div className="Dashboard-menu">
-          <Link to="/dashboard" className="Dashboard-link btn-light-2">Overview</Link>
+          <Link to="/dashboard" className="Dashboard-link">Overview</Link>
         </div>
         <div className="Dashboard-menu">
-          <Link to="/dashboard/pending-orders" className="Dashboard-link btn-light-2">Pending Orders</Link>
+          <Link to="/dashboard/pending-orders" className="Dashboard-link">Pending Orders</Link>
         </div>
         <div className="Dashboard-menu">
-          <Link to="/dashboard/delivered-orders" className="Dashboard-link btn-light-2">Delivered Orders</Link>
+          <Link to="/dashboard/delivered-orders" className="Dashboard-link">Delivered Orders</Link>
         </div>
         <div className="Dashboard-menu">
-          <Link to="/dashboard/products" className="Dashboard-link btn-light-2">Products</Link>
+          <Link to="/dashboard/products" className="Dashboard-link">Products</Link>
         </div>
         <div className="Dashboard-menu">
-          <Link to="/dashboard/new-product" className="Dashboard-link btn-light-2">New Product</Link>
+          <Link to="/dashboard/new-product" className="Dashboard-link">New Product</Link>
         </div>
         <div className="Dashboard-menu">
-          <Link to="/dashboard/update-product" className="Dashboard-link btn-light-2">Update Product</Link>
+          <Link to="/dashboard/update-product" className="Dashboard-link">Update Product</Link>
         </div>
         <div className="Dashboard-menu">
-          <Link to="/dashboard/delete-product" className="Dashboard-link btn-light-2">Delete Product</Link>
+          <Link to="/dashboard/delete-product" className="Dashboard-link">Delete Product</Link>
         </div>
         <div className="Dashboard-menu">
-          <Link to="/dashboard/users" className="Dashboard-link btn-light-2">Users</Link>
+          <Link to="/dashboard/users" className="Dashboard-link">Users</Link>
         </div>
       </div>}
       {role === "admin" && <div className="Dashboard-main Dashboard-main-default" id="dashboardMain">
-        <div className="Dashboard-header bg-color-CornSilk" id="dashboardHeader">
+        <div className="Dashboard-header bg-color-light-2" id="dashboardHeader">
           <div> 
             <span
               className="header-button btn-light-2 px-2 py-1 rounded-2"

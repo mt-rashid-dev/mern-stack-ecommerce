@@ -4,10 +4,6 @@
   margin: 0 auto;
 }
 
-.w-160 {
-	width: 160px;
-}
-
 .button-disabled {
   cursor: not-allowed !important;
   pointer-events: auto !important;
@@ -19,7 +15,7 @@
 }
 
 .btn-light-2 {
-  background-color: #EEE7CB;
+  background-color: #d0dada;
   color: var(--bs-dark);
   cursor: pointer;
 }
@@ -29,7 +25,7 @@
 }
 
 .btn-dark-2 {
-  background-color: var(--bs-dark);
+  background-color: #3a3f3f;
   color: var(--bs-light);
   cursor: pointer;
 }
@@ -39,19 +35,19 @@
 }
 
 .bg-color-AliceBlue {
-  background-color: #F0F8FF;
+  background-color: #f0f8ff;
 }
 
-.bg-color-CornSilk {
-  background-color: #FFF8DC;
+.bg-color-light-2 {
+  background-color: #eaefef;
 }
 
 .bg-color-DarkSlateGray {
-  background-color: #2F4F4F;
+  background-color: #2f4f4f;
 }
 
-.bg-color-DarkCharcoal {
-  background-color: #333;
+.bg-color-dark-2 {
+  background-color: #2a2f2f;
 }
 
 /* Animation Styles */

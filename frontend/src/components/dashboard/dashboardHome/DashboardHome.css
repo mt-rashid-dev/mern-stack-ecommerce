@@ -34,19 +34,33 @@
 
 /* si = sidebar item */
 .Dashboard-menu {
-  height: 30px;
-  padding: 0 16px;
-  margin: 8px 0;
+  height: 40px;
 }
 
 .Dashboard-link {
-  display: inline-block;
+  display: block;
   width: 100%;
-  line-height: 30px;
+  line-height: 40px;
   vertical-align: middle;
   padding: 0 16px;
   text-decoration: none;
-  border-radius: 15px;
+  color: black;
+}
+
+.Dashboard-link-light {
+  color: white;
+}
+
+.Dashboard-link-light:hover {
+  background-color: #3a3f3f;
+}
+
+.Dashboard-link-dark {
+  color: dark;
+}
+
+.Dashboard-link-dark:hover {
+  background-color: #d0dada;
 }
 
 .Dashboard-main {

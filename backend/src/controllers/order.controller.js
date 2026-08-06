@@ -157,4 +157,40 @@ const getMyOrders = async (req, res) => {
   }
 };
 
-module.exports = { checkout, verifyCheckout, verifyOrder, getMyOrders };
+const getPendingOrders = async (req, res) => {
+  try {
+    const pendingOrders = await Order.find();
+
+    res.status(200).send({
+      pendingOrders,
+      success: true
+    });
+  } catch (error) {
+    console.log(`Error - failed to get pending orders: ${error}`);
+    res.status(500).send({
+      message: "Internal server error",
+      success: false
+    });
+  }
+};
+
+const getSingleOrder = async (req, res) => {
+  try {
+    const orderId = req.params.id;
+
+    const singleOrder = await Order.findOne({ _id: orderId });
+
+    res.status(200).send({
+      singleOrder,
+      success: true
+    });
+  } catch (error) {
+    console.log(`Error - failed to get single order: ${error}`);
+    res.status(500).send({
+      message: "Internal server error",
+      success: false
+    });
+  }
+}
+
+module.exports = { checkout, verifyCheckout, verifyOrder, getMyOrders, getPendingOrders, getSingleOrder };

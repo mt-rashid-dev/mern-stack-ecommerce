@@ -10,6 +10,7 @@ import Tooltip from "react-bootstrap/Tooltip";
 import { addToCart } from "../../../features/cart/cartSlice";
 
 const SingleProduct = ({ product }) => {
+  const theme = useSelector((state) => state.themeReducer.theme);
 	const isAddedToCart = useSelector((state) => {
 		const index = state.cartReducer.cart.findIndex((item) => item._id === product._id);
 		if (index !== -1) {
@@ -33,7 +34,26 @@ const SingleProduct = ({ product }) => {
     if (product.discount > 0) {
       calculateDiscountPrice();
     }
-  }, []);
+    toggleStyle();
+  }, [theme]);
+
+  const toggleStyle = () => {
+    const singleProducts = document.getElementsByClassName("SingleProduct");
+
+    if (theme === "dark") {
+      for (let i = 0; i < singleProducts.length; i++) {
+        singleProducts[i].classList.remove("bg-color-light-2");
+        singleProducts[i].classList.add("bg-color-dark-2");
+      }
+    }
+
+    if (theme === "light") {
+      for (let i = 0; i < singleProducts.length; i++) {
+        singleProducts[i].classList.remove("bg-color-dark-2");
+        singleProducts[i].classList.add("bg-color-light-2");
+      }
+    }
+  };
 	
 	const renderTooltip = (props) => (
 	  <Tooltip id="button-tooltip" {...props}>
@@ -70,21 +90,21 @@ const SingleProduct = ({ product }) => {
 			</h6>
       <h6 className="mb-2">In-stock: {product.inStock}</h6>
       {!isAddedToCart && <Button
-				className="d-block w-160 m-auto mb-1"
+				className="d-block w-75 m-auto mb-1"
 				variant="primary"
 				onClick={() => dispatch(addToCart(product))}
 			>
 				Add to Cart
 			</Button>}
       {isAddedToCart && <Button
-				className="button-disabled d-block w-160 m-auto mb-1"
+				className="button-disabled d-block w-75 m-auto mb-1"
 				variant="secondary"
 				disabled
 			>
 				Added to Cart
 			</Button>}
 			<Button
-				className="d-block w-160 m-auto"
+				className="d-block w-75 m-auto"
 				variant="success"
 				onClick={() => navigate(`/product-details?productId=${product._id}`)}
 			>
