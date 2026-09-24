@@ -2,7 +2,6 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const Order = require("../models/order.model");
 const Product = require("../models/product.model");
-const User = require("../models/user.model");
 
 const checkout = async (req, res, next) => {
   try {
@@ -142,7 +141,7 @@ const getMyOrders = async (req, res) => {
 
     const myOrders = await Order.find({ email: email }).limit(8).skip((page - 1) * 8);
     const count = await Order.find({ email: email }).countDocuments();
-    
+
     res.status(200).send({
       myOrders,
       totalPages: Math.ceil(count / 8),
@@ -159,7 +158,7 @@ const getMyOrders = async (req, res) => {
 
 const getPendingOrders = async (req, res) => {
   try {
-    const pendingOrders = await Order.find();
+    const pendingOrders = await Order.find({ shippingStatus: "Pending" });
 
     res.status(200).send({
       pendingOrders,
@@ -191,6 +190,49 @@ const getSingleOrder = async (req, res) => {
       success: false
     });
   }
-}
+};
 
-module.exports = { checkout, verifyCheckout, verifyOrder, getMyOrders, getPendingOrders, getSingleOrder };
+const deliverOrder = async (req, res) => {
+  try {
+    const orderId = req.body.orderId;
+
+    // Test response
+    /*return res.status(404).send({
+      message: "Sorry! The order was not found",
+      errorType: "not found",
+      success: false
+      });*/
+    return res.status(500).send({
+      message: "Internal server error",
+      success: false
+    });
+
+    const result = await Order.updateOne(
+      { _id: orderId },
+      {
+        $set: { shippingStatus: "Delvered" }
+      }
+    );
+
+    if (result.modifiedCount > 0) {
+      res.status(200).send({
+        message: "The order delivered successfully",
+        success: true
+      });
+    } else {
+      res.status(404).send({
+        message: "The order was not found",
+        errorType: "not found",
+        success: true
+      });
+    }
+  } catch (error) {
+    console.log(`Error - failed to deliver the order: ${error}`);
+    res.status(500).send({
+      message: "Internal server error",
+      success: false
+    });
+  }
+};
+
+module.exports = { checkout, verifyCheckout, verifyOrder, getMyOrders, getPendingOrders, getSingleOrder, deliverOrder };

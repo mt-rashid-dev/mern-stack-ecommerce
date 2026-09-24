@@ -3,3 +3,19 @@
   overflow-x: auto;
   margin-top: 20px;
 }
+
+/* wtcol = width of table column */
+.PendingOrders-wtcol {
+  width: 150px;
+}
+
+/* pidiv = product image div */
+.PendingOrders-pidiv {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: middle;
+  padding: 10px;
+  border-radius: 10px;
+}

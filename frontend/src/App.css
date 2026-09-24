@@ -42,12 +42,20 @@
   background-color: #eaefef;
 }
 
+.bg-color-light-3 {
+  background-color: #dadfdf;
+}
+
 .bg-color-DarkSlateGray {
   background-color: #2f4f4f;
 }
 
 .bg-color-dark-2 {
   background-color: #2a2f2f;
+}
+
+.bg-color-dark-3 {
+  background-color: #3a3f3f;
 }
 
 /* Animation Styles */

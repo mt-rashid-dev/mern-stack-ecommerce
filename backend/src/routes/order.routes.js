@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { checkout, verifyCheckout, verifyOrder, getMyOrders, getPendingOrders, getSingleOrder } = require("../controllers/order.controller");
+const { checkout, verifyCheckout, verifyOrder, getMyOrders, getPendingOrders, getSingleOrder, deliverOrder } = require("../controllers/order.controller");
 const { verifyToken, verifyAdmin} = require("../utilities/auth");
 
 const orderRoutes = express.Router();
@@ -22,5 +22,8 @@ orderRoutes.get("/pending-orders", verifyToken, verifyAdmin, getPendingOrders);
 
 // GET: /api/orders/single-order/:id
 orderRoutes.get("/single-order/:id", verifyToken, getSingleOrder);
+
+// PUT: /api/orders/single-order
+orderRoutes.put("/single-order", verifyToken, verifyAdmin, deliverOrder);
 
 module.exports = orderRoutes;
