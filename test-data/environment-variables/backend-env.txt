@@ -1,0 +1,5 @@
+MONGODB_URL=mongodb://localhost:27017/ecommercedb
+STRIPE_SECRET_KEY=
+JWT_SECRET=signin
+API_BASE_URL=http://localhost:5000
+FRONTEND_BASE_URL=http://localhost:3000
