@@ -13,11 +13,12 @@ import { sleep } from "../../../helpers";
 
 const PendingOrders = () => {
   const theme = useSelector((state) => state.themeReducer.theme);
-  const [pendingOrders, setPendingOrders] = useState(null);
+  const [pendingOrders, setPendingOrders] = useState([]);
   const [singleOrder, setSingleOrder] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [deliverButton, setDeliverButton] = useState("Deliver Order");
   const [isLoadingDeliver, setIsLoadingDeliver] = useState(false);
+  const [shippingMessage, setShippingMessage] = useState("")
   const [shippingError, setShippingError] = useState("");
 
   useEffect(() => {
@@ -46,7 +47,7 @@ const PendingOrders = () => {
       })
       .then((error) => {
         console.log(error);
-        setShowMessage("Sorry! Something went wrong. Please, try again later.");
+        console.log("Sorry! Something went wrong. Please, try again later.");
       });
   };
 
@@ -69,19 +70,20 @@ const PendingOrders = () => {
     </Spinner>);
     setIsLoadingDeliver(true);
     axios.put(`${import.meta.env.VITE_API_BASE_URL}/api/orders/single-order`, { orderId: singleOrder._id }, { withCredentials: true })
-      .then(res => console.log(res.data))
+      .then(res => {
+        console.log(res.data);
+        if (res.data.isFound === false) {
+          setShippingMessage(res.data.message);
+        } else {
+          // show toast
+        }
+      })
       .catch(async error => {
         console.log(error);
-
         const value = await sleep(1000, false);
         setDeliverButton("Deliver Order");
         setIsLoadingDeliver(value);
-
-        if (error.response?.data?.errorType === "not found") {
-          setShippingError(error.response.data.message);
-        } else {
-          setShippingError("Sorry! Something went wrong. Please, try again.")
-        }
+        setShippingError("Sorry! Something went wrong. Please, try again.");
       });
   };
 
@@ -92,7 +94,13 @@ const PendingOrders = () => {
     <div>
       <h5 className="border-bottom border-2 border-dark py-1" id="pendingOrdersHeading">Pending Orders</h5>
 
-      {pendingOrders && <div className="PendingOrders-div"><Table striped bordered hover>
+      {pendingOrders.length === 0 && <div className="d-flex justify-content-center mt-3">
+        <Spinner animation="border" role="status" size="sm">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div>}
+
+      {pendingOrders.length > 0 && <div className="PendingOrders-div"><Table striped bordered hover>
         <thead>
           <tr>
             <th>Customer Name</th>

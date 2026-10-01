@@ -185,6 +185,9 @@ const UpdateProduct = () => {
               <option value="Smartphone">Smartphone</option>
               <option value="Wristwatch">Wristwatch</option>
               <option value="Video Camera">Video Camera</option>
+              <option value="Webcam">Webcam</option>
+              <option value="Airpods">Airpods</option>
+              <option value="Wireless Speaker">Wireless Speaker</option>
             </Form.Select>
           </Form.Group>
           <Form.Group className="mb-3" controlId="editDiscount">

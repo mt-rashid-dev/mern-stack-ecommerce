@@ -1,7 +1,7 @@
 [
 	{
 		"img": "",
-		"title": "Samsung Smartphone",
+		"title": "Smartphone Pro 100",
 		"description": "Lorem ipsum dolor sit amet",
 		"category": "Smartphone",
 		"discount": 0,
@@ -11,7 +11,7 @@
 	},
 	{
 		"img": "",
-		"title": "iPhone17",
+		"title": "Smartphone Classic 100",
 		"description": "Lorem ipsum dolor sit amet",
 		"category": "Smartphone",
 		"discount": 0,
@@ -21,7 +21,7 @@
 	},
 	{
 		"img": "",
-		"title": "Wristwatch Classic",
+		"title": "Wristwatch Classic 100",
 		"description": "Lorem ipsum dolor sit amet",
 		"category": "Wristwatch",
 		"discount": 5,
@@ -31,7 +31,7 @@
 	},
 	{
 		"img": "",
-		"title": "Wristwatch Waterproof",
+		"title": "Wristwatch Classic 200",
 		"description": "Lorem ipsum dolor sit amet",
 		"category": "Wristwatch",
 		"discount": 0,
@@ -41,7 +41,7 @@
 	},
 	{
 		"img": "",
-		"title": "Video Camera Pro",
+		"title": "Video Camera Pro 100",
 		"description": "Lorem ipsum dolor sit amet",
 		"category": "Video Camra",
 		"discount": 0,
@@ -51,7 +51,7 @@
 	},
 	{
 		"img": "",
-		"title": "Video Camera HD",
+		"title": "Video Camera HD 100",
 		"description": "Lorem ipsum dolor sit amet",
 		"category": "Video Camra",
 		"discount": 0,
@@ -61,7 +61,7 @@
 	},
 	{
 		"img": "",
-		"title": "Webcam Pro",
+		"title": "Webcam Pro 100",
 		"description": "Lorem ipsum dolor sit amet",
 		"category": "Webcam",
 		"discount": 0,
@@ -71,7 +71,7 @@
 	},
 	{
 		"img": "",
-		"title": "Webcam Advanced",
+		"title": "Webcam Classic 100",
 		"description": "Lorem ipsum dolor sit amet",
 		"category": "Webcam",
 		"discount": 0,
@@ -81,7 +81,7 @@
 	},
 	{
 		"img": "",
-		"title": "Airpods Basic",
+		"title": "Airpods Premium 100",
 		"description": "Lorem ipsum dolor sit amet",
 		"category": "Airpods",
 		"discount": 0,
@@ -91,7 +91,7 @@
 	},
 	{
 		"img": "",
-		"title": "Airpods Premium",
+		"title": "Airpods Premium 200",
 		"description": "Lorem ipsum dolor sit amet",
 		"category": "Airpods",
 		"discount": 0,
@@ -101,7 +101,7 @@
 	},
 	{
 		"img": "",
-		"title": "Wirless Speaker Neon",
+		"title": "Wirless Speaker Classic 100",
 		"description": "Lorem ipsum dolor sit amet",
 		"category": "Wireless Speaker",
 		"discount": 0,
@@ -111,7 +111,7 @@
 	},
 	{
 		"img": "",
-		"title": "Wireless Speaker Black",
+		"title": "Wireless Speaker Classic 200",
 		"description": "Lorem ipsum dolor sit amet",
 		"category": "Wireless Speaker",
 		"discount": 0,
@@ -121,7 +121,7 @@
 	},
 	{
 		"img": "",
-		"title": "iPhone10",
+		"title": "Smartphone Pro 200",
 		"description": "Lorem ipsum dolor sit amet",
 		"category": "Smartphone",
 		"discount": 0,
@@ -131,7 +131,7 @@
 	},
 	{
 		"img": "",
-		"title": "Smartphone Frozen",
+		"title": "Smartphone Pro 300",
 		"description": "Lorem ipsum dolor sit amet",
 		"category": "Smartphone",
 		"discount": 0,

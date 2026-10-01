@@ -1,0 +1,240 @@
+[{
+  "_id": {
+    "$oid": "6ab6fb21a6c008d9f97aceee"
+  },
+  "profilePicture": "",
+  "firstName": "Daniel",
+  "lastName": "Morgan",
+  "email": "daniel.morgan@example.com",
+  "password": "86b5c8bf4006212b4dcda415a5201d00f4596f51106edb725e2b9c0bea6b3229d32e94bbfe697d424c44c42a0819f7a8134ba8977689f1dca5109a0ded3255becb33bf004809f83a79901328e4e4b0b3",
+  "role": "admin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7da8db6b3780214f7e2bf"
+  },
+  "profilePicture": "",
+  "firstName": "Sophia",
+  "lastName": "Anderson",
+  "email": "sophia.anderson@example.com",
+  "password": "3fdd906f3d7a4fd7754396536f2e16a07817a04cd22b81f484cb07bec2017f172398522aaa75138e77187769b4b616ac65586472949cb37075f367bb7f309e0cc4111ae1f4b2f896671b10dc2a062f4c",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8403bdd00dd1a6b0dfefd"
+  },
+  "profilePicture": "",
+  "firstName": "James",
+  "lastName": "Wilson",
+  "email": "james.wilson@example.com",
+  "password": "dcc226e386ee9d71a1298daa94d607d2dd9d1dc2c42db93cfd7b52d78b631decf38377568c6eea6b9fd735f2a62e61f1a43ab52ee343e6e84389b5512b1f7210f78b2b9fba22c4d4900e3e25a81beb02",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8a0ca917bb84cddd7b4d1"
+  },
+  "profilePicture": "",
+  "firstName": "Emma",
+  "lastName": "Thompson",
+  "email": "emma.thompson@example.com",
+  "password": "b205bd739d498d1ef5d7ced9060c2e052ed81dd18c0a6b90dafc43fc197803cd125f4ec123e082fca2638472fff2aa972c02bd1181a762a2590b38a83dee23a47769e2e24f273137948ce275dc95bae6",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aba95fc0ada69138c49353d"
+  },
+  "profilePicture": "",
+  "firstName": "Michael",
+  "lastName": "Taylor",
+  "email": "michael.taylor@example.com",
+  "password": "cb47da2c14f15f717ff4346945b4f94cd85910624c4f6560024e8d5b66bbc33524078e1cfedfe934ab2b7b49e9a33da937b62c078f05ad54a0f5acdd70c9424635611b63a5ccc8313f76695f97fcaf30",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aba9c910ada69138c49354b"
+  },
+  "profilePicture": "",
+  "firstName": "Olivia",
+  "lastName": "Bennett",
+  "email": "olivia.bennett@example.com",
+  "password": "282e8360c0870f574205f520f437b327a9920972d49e6de3a72d10f721e794610de1b5d6af213148eebae9137941fa0effe1c2b585cb235b8038bdad476ffc4e92029f40e5f7dc8adfaeecb6d5a7817d",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6abaa42c0ada69138c493556"
+  },
+  "profilePicture": "",
+  "firstName": "William",
+  "lastName": "Carter",
+  "email": "william.carter@example.com",
+  "password": "b065169753ed84fe17064d898328823ea70ae065f7e1c30639eceef03b1ed6ab78109d6b0339602287c6676a0a7db85010758e0ce4189629e1ad8026dca65116bebadd3d6e4d6126683cda1d435b28f7",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6abaa48a0ada69138c493561"
+  },
+  "profilePicture": "",
+  "firstName": "Isabella",
+  "lastName": "Mitchell",
+  "email": "isabella.mitchell@example.com",
+  "password": "695e72293c4a79baf2d9aef64ebea542e51da7168be116190db45d276330b777c032ad52b9e103cc041e02bc777789b7a71c7eb8d98aad9e0d4e091e087c7dbc6d090174949a9a2c24523d897587ca6c",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6abaa4dd0ada69138c49356c"
+  },
+  "profilePicture": "",
+  "firstName": "Alexander",
+  "lastName": "Parker",
+  "email": "alexander.parker@example.com",
+  "password": "2426cebdad507889f9b58028a4c13341dd54dded91c972df0095bd5ffe583283e01d3dffe3dd88dd32d1e152b0db038597d1f93a67ded58a24390038060ab518c38e1e60ad90031b1a215963937dd98d",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6abaa51c0ada69138c493577"
+  },
+  "profilePicture": "",
+  "firstName": "Charlotte",
+  "lastName": "Roberts",
+  "email": "charlotte.roberts@example.com",
+  "password": "912c2eb98b9d2f950abc11521ced39644591e7ba57b711e6e9d0951e17d58705b63269336fc599fab63cbfac3c511bed55a981b8701126f4eac6c4faef4a13ea2b2813704eddde45eb0c4d0cd54dba8b",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6abd6c698be804851557d2dd"
+  },
+  "profilePicture": "",
+  "firstName": "Benjamin",
+  "lastName": "Cooper",
+  "email": "benjamin.cooper@example.com",
+  "password": "3ded9c417d3a8e35f2f6fb8c6eeabf7b9ca1f27a9ca0e20c4fb2c94ac4207bd92ef1abd6ab082777bad600561877d8efdadc2d590dd9f53e3499afddbf1a8f9036a4f32baa18d3d628844abb2c0bc07f",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6abd6cc48be804851557d2e8"
+  },
+  "profilePicture": "",
+  "firstName": "Amelia",
+  "lastName": "Richardson",
+  "email": "amelia.richardson@example.com",
+  "password": "6284b4dbdb6959570248ef4fc2403b1a0c6e3a896a617348aabb55d525822f8df5fcd68dced45c8972d48a0558d23364dc2c19a2888dd3898b69576f0515f5d63297040ee0cae69ddb456543793aed77",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6abd7c0e8be804851557d2f3"
+  },
+  "profilePicture": "",
+  "firstName": "Henry",
+  "lastName": "Collins",
+  "email": "henry.collins@example.com",
+  "password": "95cf7310ab2fc68d31ff6e47197a08670e3e4178d9019c72545ce3ab8666065df6ef8af9a2ac418e6fa5953588a22752e437e3875521ef1c2af6c47a8a2b236dbd45a09b9d465ca2d9de9b8825d438ae",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6abd7c4a8be804851557d2fe"
+  },
+  "profilePicture": "",
+  "firstName": "Mia",
+  "lastName": "Stewart",
+  "email": "mia.stewart@example.com",
+  "password": "7593c0084d44b4b5ce2849b615afcde5828f9a00ca69069bc2563dfa5280bbd1c7ebad2ffdedce979d66f4d0fbdba317804daae4b7a558384c3942def26f1b3080cca1ee83b6377212c5aedca6add373",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6abd803f8be804851557d309"
+  },
+  "profilePicture": "",
+  "firstName": "Lucas",
+  "lastName": "Turner",
+  "email": "lucas.turner@example.com",
+  "password": "85443360c966965de7b51e74ba122a812e46a4d3d376533d52f70b4bc5841953d9b35d4ced672eb56ff8ea47da22b71c87afa0371915a6f291255fb578037f384d1dcd3c6bb62b2cb9af2263b323aeec",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6abd80918be804851557d314"
+  },
+  "profilePicture": "",
+  "firstName": "Evelyn",
+  "lastName": "Phillips",
+  "email": "evelyn.phillips@example.com",
+  "password": "a64b1ac95c62db4a703ccc851e985ac797d3c03b5c765787d717a6b71e67c1988db39e449325f1764ca04eee8aa3eaec867c19d040a901d7500cd74c526d54d53732e655310967da160bf2347d1dbab4",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6abd861b8be804851557d31f"
+  },
+  "profilePicture": "",
+  "firstName": "Matthew",
+  "lastName": "Campbell",
+  "email": "matthew.campbell@example.com",
+  "password": "2509900f1be579da4374465aa5147ad71046606478d282b42bfc881d9399841f05183339280f984a71baa594eab45bc55b1615ee8c2794494a9e413fc60e5816a4f99479aab429b85732e346c2ef11e1",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6abd86858be804851557d32a"
+  },
+  "profilePicture": "",
+  "firstName": "Harper",
+  "lastName": "Perry",
+  "email": "harper.perry@example.com",
+  "password": "730e2377c59c72074b9f2a21a7d7058085c87207212aaacb56c9a4fb1e3c606ace014f97da20c1a773066ae217a85e5bef76d51bf0ea610e7dfc14f43a8fcab8c5250b4212bb5d9fa48257a297d9177e",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6abda3d18be804851557d335"
+  },
+  "profilePicture": "",
+  "firstName": "Ethan",
+  "lastName": "Foster",
+  "email": "ethan.foster@example.com",
+  "password": "6f7d316596216c7e827105877c8a95e73c1cdb5c2cdef60bbd08b6df9b388ae0d0cd1058bca72aa8a27330fab82632f33db22c65cc823eebf0a214cabab5d6039bef7cc96599250b209cecc39359524d",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6abda4098be804851557d340"
+  },
+  "profilePicture": "",
+  "firstName": "Grace",
+  "lastName": "Sullivan",
+  "email": "grace.sullivan@example.com",
+  "password": "d2a11aa63c81b272b6069ba6e903db44ef8147955da796ac442dd11779682e7849a51eb8e8cc9c74c1af9a6473a4cbbd3966d653ffe3a0a800b29fa2c359ff1e1d5f121b5eb03f55453b344e0d17c2b8",
+  "role": "user",
+  "__v": 0
+}]

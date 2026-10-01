@@ -158,6 +158,11 @@ const getMyOrders = async (req, res) => {
 
 const getPendingOrders = async (req, res) => {
   try {
+    // Test response
+    /*return res.status(200).send({
+      pendingOrders: [],
+    });*/
+
     const pendingOrders = await Order.find({ shippingStatus: "Pending" });
 
     res.status(200).send({
@@ -197,15 +202,14 @@ const deliverOrder = async (req, res) => {
     const orderId = req.body.orderId;
 
     // Test response
-    /*return res.status(404).send({
+    /*return res.status(200).send({
       message: "Sorry! The order was not found",
-      errorType: "not found",
       success: false
       });*/
-    return res.status(500).send({
+    /*return res.status(500).send({
       message: "Internal server error",
       success: false
-    });
+      });*/
 
     const result = await Order.updateOne(
       { _id: orderId },
@@ -220,9 +224,9 @@ const deliverOrder = async (req, res) => {
         success: true
       });
     } else {
-      res.status(404).send({
+      res.status(200).send({
         message: "The order was not found",
-        errorType: "not found",
+        isFound: false,
         success: true
       });
     }

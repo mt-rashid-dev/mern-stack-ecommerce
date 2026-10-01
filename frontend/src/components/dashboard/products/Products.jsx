@@ -21,7 +21,7 @@ const Products = () => {
 
   useEffect(() => {
     toggleStyle();
-    fetchData(`${import.meta.env.VITE_API_BASE_URL}/api/products?page=1&limit=10`);
+    fetchData(`${import.meta.env.VITE_API_BASE_URL}/api/products?page=${page}&limit=${limit}`);
     calculateDiscountPrice();
   }, [theme, singleProduct]);
 
